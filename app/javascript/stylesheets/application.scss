@@ -1,6 +1,10 @@
-.room-table {
-  background-color: #30D3FF;
+body {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
 }
+
 .chat-room {
   height: 100vh;
   overflow-y: scroll;
@@ -33,7 +37,10 @@
     position: absolute;
     bottom: 0;
     padding: 15px;
-    width: calc(100% - 15px);
+    width: 100%;
+    margin-left: -15px;
+    background-color: white;
+    border-top: 1px solid #A8F4FF;
     input[type=text] {
       height: 45px;
       font-size: 18px;
@@ -44,3 +51,42 @@
     }
   }
 }
+
+.card.no-outline {
+  border: none;
+}
+
+.room-link {
+  &:hover {
+    text-decoration: none;
+  }
+  .room-card {
+    transition: background-color 0.7s ease;
+    border-radius: 20px;
+    &:hover {
+      background-color: #A8F4FF;
+    }
+    &.active {
+      background-color: black;
+      .name {
+        color: white;
+      }
+      .member_count {
+        color: white;
+      }
+    }
+    .name {
+      font-weight: bold;
+      color: black;
+    }
+    .mumber-count {
+      color: #777777;
+      font-weight: light;
+    }
+  }
+}
+
+.room-table {
+  border-right: 1px solid #A8F4FF;
+}
+// following code is personal preference
