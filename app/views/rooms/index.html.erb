@@ -30,8 +30,11 @@
     <div class="col-9">
       <% if @room.present? %>
       <div class="chat-room">
-        <nav class="navbar navbar-light bg-light mb-4">
-          <span class="navbar-brand"><%= @room.name.capitalize %></span>
+        <nav class="navbar navbar-light">
+          <span class="navbar-brand">
+            <b><%= @room.name.capitalize %></b>
+          </span>
+          <small><%= @room.users.uniq.count %> Members</small>
         </nav>
         <div id="messages">
           <% @room.messages.each do |message| %>
